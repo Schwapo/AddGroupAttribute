@@ -20,6 +20,8 @@ public class AddGroupExample : MonoBehaviour
 ```
 Using one of the AddGroupAttributes:
 ```csharp
+using Sirenix.OdinInspector.AdditionalAttributes;
+
 [AddBoxGroup("Box", To = new[] { "SomeField" })
 public class AddGroupExample : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class AddGroupExample : MonoBehaviour
 Now that's hardly better, but it will start to show once it gets more complex.
 It's also possible to add the attributes to members based on a condition instead of a name.
 ```csharp
+using Sirenix.OdinInspector.AdditionalAttributes;
+
 [AddBoxGroup("Box", If = "MemberIsMethod")]
 public class AddGroupExample : MonoBehaviour
 {
@@ -108,6 +112,8 @@ public class AddGroupExample : MonoBehaviour
 
 Using some of the AddGroupAttributes:
 ```csharp
+using Sirenix.OdinInspector.AdditionalAttributes;
+
 // Add a box group around all members
 [AddBoxGroup("Box", If = "@true")]
 
