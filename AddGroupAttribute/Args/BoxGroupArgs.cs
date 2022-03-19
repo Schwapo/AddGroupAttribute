@@ -1,22 +1,25 @@
-public class BoxGroupArgs : GroupArgs
+namespace Sirenix.OdinInspector.AdditionalAttributes
 {
-    public string LabelText;
-
-    public bool ShowLabel
+    public class BoxGroupArgs : GroupArgs
     {
-        get => _showLabel;
-        set { _showLabel = value; HasDefinedShowLabel = true; }
+        public string LabelText;
+
+        public bool ShowLabel
+        {
+            get => _showLabel;
+            set { _showLabel = value; HasDefinedShowLabel = true; }
+        }
+
+        public bool CenterLabel
+        {
+            get => _centerLabel;
+            set { _centerLabel = value; HasDefinedCenterLabel = true; }
+        }
+
+        public bool HasDefinedShowLabel { get; private set; }
+        public bool HasDefinedCenterLabel { get; private set; }
+
+        private bool _showLabel;
+        private bool _centerLabel;
     }
-
-    public bool CenterLabel
-    {
-        get => _centerLabel;
-        set { _centerLabel = value; HasDefinedCenterLabel = true; }
-    }
-
-    public bool HasDefinedShowLabel { get; private set; }
-    public bool HasDefinedCenterLabel { get; private set; }
-
-    private bool _showLabel;
-    private bool _centerLabel;
 }

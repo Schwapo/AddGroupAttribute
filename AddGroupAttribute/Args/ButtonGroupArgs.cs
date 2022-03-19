@@ -1,1 +1,4 @@
-public class ButtonGroupArgs : GroupArgs { }
+namespace Sirenix.OdinInspector.AdditionalAttributes
+{
+    public class ButtonGroupArgs : GroupArgs { }
+}
