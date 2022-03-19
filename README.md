@@ -148,8 +148,6 @@ You can also pass in a string to the **_Args_** parameter which should resolve t
 This way you don't have to specify the group arguments one by one which reduces visual complexity and also allows you to create argument preferences by
 creating one of these instances per group type and always passing that to the corresponding group.
 ```csharp
-using Sirenix.OdinInspector.AdditionalAttributes;
-
 public static class Odin
 {
     public static TitleGroupArgs TitleGroupArgs = new TitleGroupArgs
@@ -159,6 +157,8 @@ public static class Odin
         HorizontalLine = false
     };
 }
+
+using Sirenix.OdinInspector.AdditionalAttributes;
 
 [AddTitleGroup("Title", To = new[] { "SomeField1", "SomeField2", "SomeField3" }, Args = "@Odin.TitleGroupArgs")]
 public class AddGroupTest : MonoBehaviour
