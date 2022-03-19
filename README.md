@@ -142,5 +142,32 @@ public class AddGroupExample : MonoBehaviour
 }
 ```
 
+---
+### Args Parameter
+You can also pass in a string to the **_Args_** parameter which should resolve to an instance of the corresponding `<GroupName>Args` class.
+This way you don't have to specify the group arguments one by one which reduces visual complexity and also allows you to create argument preferences by
+creating one of these instances per group type and always passing that to the corresponding group.
+```csharp
+using Sirenix.OdinInspector.AdditionalAttributes;
+
+public static class Odin
+{
+    public static TitleGroupArgs TitleGroupArgs = new TitleGroupArgs
+    {
+        Alignment = TitleAlignments.Centered,
+        BoldTitle = true,
+        HorizontalLine = false
+    };
+}
+
+[AddTitleGroup("Title", To = new[] { "SomeField1", "SomeField2", "SomeField3" }, Args = "@Odin.TitleGroupArgs")]
+public class AddGroupTest : MonoBehaviour
+{
+    public string SomeField1;
+    public string SomeField2;
+    public string SomeField3;
+}
+```
+
 [Odin Inspector]: https://odininspector.com/
 [Value Resolver]: https://odininspector.com/tutorials/value-and-action-resolvers/using-value-resolvers
