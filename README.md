@@ -1,6 +1,6 @@
 # AddGroupAttribute
 
-#### Adds attributes to members via Odin's attribute processors which can reduce the amount of code needed and cleans up the class. (Requires [Odin Inspector])
+#### Adds group attributes to members via Odin's attribute processors which can reduce the amount of code needed and cleans up the class. (Requires [Odin Inspector])
 
 ---
 
