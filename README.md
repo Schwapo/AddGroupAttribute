@@ -2,14 +2,10 @@
 
 #### Adds group attributes to members via Odin's attribute processors which can reduce the amount of code needed and cleans up the class. (Requires [Odin Inspector])
 
----
-
-### Installation
+## Installation
 Simply put the downloaded AddGroupAttribute folder in your project and start using the attribute as shown in the examples.
 
----
-
-### Examples
+## Examples
 Using Odin's default way:
 ```csharp
 public class AddGroupExample : MonoBehaviour
@@ -20,8 +16,6 @@ public class AddGroupExample : MonoBehaviour
 ```
 Using one of the AddGroupAttributes:
 ```csharp
-using Sirenix.OdinInspector.AdditionalAttributes;
-
 [AddBoxGroup("Box", To = new[] { "SomeField" })
 public class AddGroupExample : MonoBehaviour
 {
@@ -31,8 +25,6 @@ public class AddGroupExample : MonoBehaviour
 Now that's hardly better, but it will start to show once it gets more complex.
 It's also possible to add the attributes to members based on a condition instead of a name.
 ```csharp
-using Sirenix.OdinInspector.AdditionalAttributes;
-
 [AddBoxGroup("Box", If = "MemberIsMethod")]
 public class AddGroupExample : MonoBehaviour
 {
@@ -66,8 +58,6 @@ $memberInfo             | The MemberInfo instance of the currently processed mem
 $memberNames            | The member names that where passed in by the **_To_** parameter.
 $parentProperty         | The InspectorProperty instance of the member's parent.
 $type                   | The type of the field.
-
----
 
 Here's a more complex example which better shows how it can reduce visual complexity.
 
@@ -112,15 +102,8 @@ public class AddGroupExample : MonoBehaviour
 
 Using some of the AddGroupAttributes:
 ```csharp
-using Sirenix.OdinInspector.AdditionalAttributes;
-
-// Add a box group around all members
 [AddBoxGroup("Box", If = "@true")]
-
-// Add a foldout group to all the specified fields and nest them inside the previous box group.
 [AddFoldoutGroup("Box/Foldout", To = new[] { "SomeField1", "SomeField2", "SomeField3" })] 
-
-// Add a toggle group to all members that are methods and nest them inside the previous groups.
 [AddToggleGroup("Box/Toggle", If = "MemberIsMethod")]
 public class AddGroupExample : MonoBehaviour
 {
@@ -142,8 +125,7 @@ public class AddGroupExample : MonoBehaviour
 }
 ```
 
----
-### Args Parameter
+## Args Parameter
 You can also pass in a string to the **_Args_** parameter which should resolve to an instance of the corresponding `<GroupName>Args` class.
 This way you don't have to specify the group arguments one by one which reduces visual complexity and also allows you to create argument preferences by
 creating one of these instances per group type and always passing that to the corresponding group.
@@ -157,8 +139,6 @@ public static class Odin
         HorizontalLine = false
     };
 }
-
-using Sirenix.OdinInspector.AdditionalAttributes;
 
 [AddTitleGroup("Title", To = new[] { "SomeField1", "SomeField2", "SomeField3" }, Args = "@Odin.TitleGroupArgs")]
 public class AddGroupTest : MonoBehaviour
